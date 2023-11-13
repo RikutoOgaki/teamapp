@@ -81,10 +81,10 @@ export default async function handler(
 
     const client = await pool.connect()
     try {
-        const rows = await getTrainData(client)
+        const result = await getTrainData(client)
 
         res.status(200).json({
-            list: rows
+            list: result
         })
     } finally {
         client.release()

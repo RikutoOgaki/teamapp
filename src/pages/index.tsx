@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Link from 'next/link'
 
+// ロード画面になるのでデータを完全取得するまで開いておく
+
 export default function LoginForm() {
 
   return (

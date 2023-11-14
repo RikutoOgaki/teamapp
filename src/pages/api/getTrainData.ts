@@ -25,6 +25,7 @@ const { Pool } = require('pg')
 type Input = {
 }
 type Output = {
+    result: any
 }
 
 async function getTrainData(client: any) {
@@ -56,6 +57,7 @@ JOIN
     Train ON Home.homeid = Train.homeid
 GROUP BY
     Route.routeid, Route.routename;
+
     `)
     return result
 }
@@ -84,7 +86,7 @@ export default async function handler(
         const result = await getTrainData(client)
 
         res.status(200).json({
-            list: result
+            result: result
         })
     } finally {
         client.release()

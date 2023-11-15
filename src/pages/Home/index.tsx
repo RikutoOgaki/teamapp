@@ -7,7 +7,17 @@ export default function Home() {
     return (
         <>
             <div className={style.homeWrap}>
+                <div className={style.myRoute}>
+                    <div className={style.subMyRoute}>
 
+                    </div>
+                </div>
+                <div className={style.transferPlan}>
+
+                </div>
+                <div className={style.timeDown}>
+
+                </div>
             </div>
         </>
     )

@@ -5,8 +5,10 @@ import style from '@/styles/Home/index.module.scss'
 
 export default function Home() {
 
-
+    // １週間の曜日を数値で管理するためのstate
     const [test, setTest] = useState(0)
+
+    // 1週間のダミーデータ
     const [week, setWeek] = useState({
         route: [
             {
@@ -47,6 +49,7 @@ export default function Home() {
         ]
     })
 
+    // 遅延・運休と振替案の表示切替を行うflg
     const [flg, setFlg] = useState(false)
 
     // 今日の日付とその曜日を取得して、一致するweekの値を表示する

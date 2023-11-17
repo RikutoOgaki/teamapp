@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import style from '@/styles/Home/index.module.scss'
+import { TimeClock } from '@/components/common/TimeClock'
 
 // 一番見るページになる
 
@@ -53,6 +54,8 @@ export default function Home() {
     const [flg, setFlg] = useState(false)
 
     // 今日の日付とその曜日を取得して、一致するweekの値を表示する
+    // 必要な値
+    // 現在時刻 電車の出発時間 カウントダウンタイマーの実装
 
 
     return (
@@ -99,15 +102,15 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={style.timeDown}>
+                {/* <div className={style.timeDown}>
                     <div className={style.dateTime}>
-                        {/* 電車が出発する日付と時間 */}
+
                         <p>11/2(木)</p>
                         <p>8時23分</p>
                     </div>
                     <p className={style.text}>大阪・神戸方面</p>
                     <div className={style.timeClock}>
-                        {/* タイムダウンするロジックを作成する 現在時刻から発車するまでの時間を算出する */}
+
                         <span>＜</span>
                         <p>
                             <span className={style.bold}>13</span>
@@ -118,7 +121,9 @@ export default function Home() {
                         <span>＞</span>
                     </div>
                     <p className={style.textBold}>先発</p>
-                </div>
+                </div> */}
+
+                <TimeClock />
             </div>
         </>
     )

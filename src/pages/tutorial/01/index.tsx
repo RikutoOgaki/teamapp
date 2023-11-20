@@ -21,29 +21,34 @@ export default function Tutorial01() {
                     </div>
                 </div>
                 {/* カバーをかける */}
-                <div className={style.yesCover}>
-                    <div className={style.transferPlan}>
-                        <div className={style.tabBox}>
-                            <div className={style.tabs}>
-                                <button
-                                    // className={flg === false ? style.tabsSuc : style.tabsBtn}
-                                    // onClick={() => setFlg(false)}
-                                    className={style.tabsSuc}
-                                >遅延・運休</button>
-                                <button
-                                    // className={flg === false ? style.tabsBtn : style.tabsSuc}
-                                    // onClick={() => setFlg(true)}
-                                    className={style.tabsBtn}
-                                >振替案</button>
-                            </div>
-                            <div className={style.messageBox}>
-                                <div className={style.message}>
-                                    <p>遅延はありません</p>
-                                </div>
+                <div className={style.transferPlan}>
+                    <div className={style.tabBox}>
+                        <div className={style.tabs}>
+                            <button
+                                // className={flg === false ? style.tabsSuc : style.tabsBtn}
+                                // onClick={() => setFlg(false)}
+                                className={style.tabsSuc}
+                            >遅延・運休</button>
+                            <button
+                                // className={flg === false ? style.tabsBtn : style.tabsSuc}
+                                // onClick={() => setFlg(true)}
+                                className={style.tabsBtn}
+                            >振替案</button>
+                        </div>
+                        <div className={style.messageBox}>
+                            <div className={style.message}>
+                                <p>遅延はありません</p>
                             </div>
                         </div>
                     </div>
                     <TimeClock />
+                </div>
+                <div className={style.yesCover}>
+                    <div className={style.chat}>
+                        <p>出発駅と到着駅をタップし<br />
+                            駅を入力してください。
+                        </p>
+                    </div>
                 </div>
             </div>
         </>

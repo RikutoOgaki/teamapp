@@ -19,7 +19,10 @@ export default function LoginForm() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={style.topWrap}>
+      <div
+        className={style.topWrap}
+        onClick={() => location.href = '/tutorial/01'}
+      >
         <img className={style.left} src="/img/topleft.png" alt="left" />
         <img className={style.logo} src="/img/logo.png" alt="logo" />
         <img className={style.right} src="/img/topright.png" alt="right" />

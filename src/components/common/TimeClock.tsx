@@ -7,6 +7,16 @@ export function TimeClock() {
     // カウントダウンタイマーの実装
     // 0になったら、次発までの時間にしないといけない
 
+    // 残り時間を、分秒に変え、表示する
+    // 現在の時間
+    const nowTime = dayjs()
+    const nowFormat = dayjs(nowTime).format()
+    // const now = dayjs(nowFormat).format('YYYY/MM/DD')
+
+    console.log(nowFormat);
+
+
+
     // 現在の月、日、曜日を取得
     const Month = dayjs().get('M') + 1
     const Day = dayjs().get('D')
@@ -14,7 +24,7 @@ export function TimeClock() {
 
 
     const today = dayjs().unix();
-    console.log(today, Month, Day, week);
+    // console.log(today, Month, Day, week);
 
 
 

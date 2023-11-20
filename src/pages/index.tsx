@@ -4,7 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import style from '@/styles/home.module.scss'
 
-// ロード画面になるのでデータを完全取得するまで開いておく
+// ロード画面になるのでデータを完全取得するまで開いておく（dbなら）
+
+// フロント実装なら、数秒後に遷移するようにする
 
 export default function LoginForm() {
 
@@ -17,8 +19,10 @@ export default function LoginForm() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-
+      <div className={style.topWrap}>
+        <img className={style.left} src="/img/topleft.png" alt="left" />
+        <img className={style.logo} src="/img/logo.png" alt="logo" />
+        <img className={style.right} src="/img/topright.png" alt="right" />
       </div>
 
     </>

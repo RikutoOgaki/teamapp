@@ -4,7 +4,10 @@ import { TimeClock } from '@/components/common/TimeClock'
 export default function Tutorial02() {
     return (
         <>
-            <div className={style.homeWrap}>
+            <div
+                className={style.homeWrap}
+                onClick={() => location.href = '/tutorial/03'}
+            >
                 <div className={style.yesCoverTop}></div>
                 <div className={style.myRoute}>
                     <div className={style.subMyRoute}>

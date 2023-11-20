@@ -5,23 +5,22 @@ export default function Tutorial02() {
     return (
         <>
             <div className={style.homeWrap}>
-                <div className={style.noCover}>
-                    <div className={style.myRoute}>
-                        <div className={style.subMyRoute}>
-                            <div className={style.start}>
-                                <p className={style.label}>出発駅</p>
-                                <p className={style.homeName}></p>
-                            </div>
-                            <span className={style.span}>経由駅</span>
-                            <div className={style.end}>
-                                <p className={style.label}>到着駅</p>
-                                <p className={style.homeName}></p>
-                            </div>
+                <div className={style.yesCoverTop}></div>
+                <div className={style.myRoute}>
+                    <div className={style.subMyRoute}>
+                        <div className={style.start}>
+                            <p className={style.label}>出発駅</p>
+                            <p className={style.homeName}></p>
+                        </div>
+                        <span className={style.span}>経由駅</span>
+                        <div className={style.end}>
+                            <p className={style.label}>到着駅</p>
+                            <p className={style.homeName}></p>
                         </div>
                     </div>
                 </div>
                 {/* カバーをかける */}
-                <div className={style.yesCover}>
+                <div className={style.noCover}>
                     <div className={style.transferPlan}>
                         <div className={style.tabBox}>
                             <div className={style.tabs}>
@@ -43,7 +42,12 @@ export default function Tutorial02() {
                             </div>
                         </div>
                     </div>
-                    <TimeClock />
+                </div>
+                <TimeClock />
+                <div className={style.yesCoverBottom}>
+                    <div className={style.chat}>
+                        <p>ここでは遅延・運休と振替案が表示されます。</p>
+                    </div>
                 </div>
             </div>
         </>

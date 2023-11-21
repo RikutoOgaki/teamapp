@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 import style from '@/styles/Home/index.module.scss'
 import { TimeClock } from '@/components/common/TimeClock'
+import { FaListUl, FaPlus } from 'react-icons/fa'
+import { FaTrainSubway } from 'react-icons/fa6';
+import dayjs from 'dayjs'
 
 // 一番見るページになる
 
 export default function Home() {
 
-    // １週間の曜日を数値で管理するためのstate
-    const [test, setTest] = useState(0)
+    // １週間の曜日を一致させるためのデータ
+    const weekDay = dayjs().get('d')
 
     // 1週間のダミーデータ
     const [week, setWeek] = useState({
@@ -25,22 +28,22 @@ export default function Home() {
             {
                 weeknum: 2,
                 starthome: '生駒',
-                endhome: '大阪'
+                endhome: '京都'
             },
             {
                 weeknum: 3,
-                starthome: '生駒',
-                endhome: '大阪'
+                starthome: '北海道',
+                endhome: '青森'
             },
             {
                 weeknum: 4,
-                starthome: '生駒',
+                starthome: '滋賀',
                 endhome: '大阪'
             },
             {
                 weeknum: 5,
-                starthome: '生駒',
-                endhome: '大阪'
+                starthome: '奈良',
+                endhome: '和歌山'
             },
             {
                 weeknum: 6,
@@ -58,12 +61,19 @@ export default function Home() {
     // 現在時刻 電車の出発時間 カウントダウンタイマーの実装
 
 
+    // 登録画面とリスト画面がでてくるためのstate管理
+    const [showmove, setShowmove] = useState({
+        list: false,
+        registration: false
+    })
+
+
     return (
         <>
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>
                     {week.route.map((v, idx) =>
-                        v.weeknum === test ?
+                        v.weeknum === weekDay ?
                             <div key={idx} className={style.subMyRoute}>
                                 <div className={style.start}>
                                     <p className={style.label}>出発駅</p>
@@ -76,6 +86,23 @@ export default function Home() {
                                 </div>
                             </div> : null
                     )}
+                    <div className={style.link}>
+                        <div
+                            className={style.listIconBox}
+                        // 自分が登録したリスト表示の下から画面が出てくる
+                        // onClick={}
+                        >
+                            <FaListUl className={style.listIcon} />
+                        </div>
+                        <div
+                            className={style.addTrainIconBox}
+                        // 決まった日の電車を登録する画面がでてくる
+                        // onCLick={}
+                        >
+                            <FaTrainSubway className={style.addTrainIcon} />
+                            <FaPlus className={style.plus} />
+                        </div>
+                    </div>
                 </div>
                 <div className={style.transferPlan}>
                     <div className={style.tabBox}>

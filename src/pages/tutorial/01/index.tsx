@@ -1,7 +1,15 @@
+import { useState, useEffect } from 'react'
 import style from '@/styles/tutorial/01/index.module.scss'
 import { TimeClock } from '@/components/common/TimeClock'
 
 export default function Tutorial01() {
+
+    // link先を管理するstate
+    const [link, setLink] = useState()
+
+    // 今何個目のチュートリアルか管理するstate
+    const [flg, setFlg] = useState(0)
+
     return (
         <>
             <div

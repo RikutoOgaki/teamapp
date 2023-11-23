@@ -14,7 +14,7 @@ export default function Tutorial01() {
         <>
             <div
                 className={style.homeWrap}
-                onClick={() => location.href = '/tutorial/02'}
+                onClick={() => location.href = '/'}
             >
                 <div className={style.noCover}>
                     <div className={style.myRoute}>

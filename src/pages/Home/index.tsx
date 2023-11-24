@@ -5,6 +5,8 @@ import { FaListUl, FaPlus } from 'react-icons/fa'
 import { FaTrainSubway } from 'react-icons/fa6';
 import dayjs from 'dayjs'
 
+import Link from 'next/link'
+
 // 一番見るページになる
 
 export default function Home() {

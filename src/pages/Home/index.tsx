@@ -121,7 +121,9 @@ export default function Home() {
                         <div className={style.messageBox}>
                             {flg === false ?
                                 <div className={style.message}>
-                                    <p>遅延はありません</p>
+                                    <p className={style.maru}><span>◯</span>遅延はありません</p>
+                                    <p className={style.san}><span>△</span>１５分の遅延があります</p>
+                                    <p className={style.batu}><span>✗</span>運転見合わせ</p>
                                 </div>
                                 :
                                 <div className={style.message}>

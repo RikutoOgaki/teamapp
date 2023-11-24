@@ -169,6 +169,25 @@
                 width: 100%;
                 height: 25vh;
                 background-color: #f8f8f8;
+
+                .message {
+                    padding: 1rem;
+
+                    .maru {
+                        color: #8FC4B1;
+                        font-weight: bold;
+                    }
+
+                    .san {
+                        color: #D6AB58;
+                        font-weight: bold;
+                    }
+
+                    .batu {
+                        color: #D45C5C;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }

@@ -3,11 +3,53 @@ import style from '@/styles/components/common/routelist.module.scss'
 import switch_arrow from '@/public/img/switchArrow.png'
 import Image from 'next/image'
 
-export function RouteList() {
+type RouteListProps = {
+    onCloseSample: () => void;
+};
+
+export function RouteList({ onCloseSample }: RouteListProps) {
 
     const [route, setRoute] = useState({
         route: [
             {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '神戸'
+            },
+            {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '近鉄奈良'
+            },
+            {
+                routenum: 0,
+                starthome: '中崎町',
+                endhome: '生駒'
+            },
+            {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '嵯峨嵐山'
+            }, {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '神戸'
+            },
+            {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '近鉄奈良'
+            },
+            {
+                routenum: 0,
+                starthome: '中崎町',
+                endhome: '生駒'
+            },
+            {
+                routenum: 0,
+                starthome: '生駒',
+                endhome: '嵯峨嵐山'
+            }, {
                 routenum: 0,
                 starthome: '生駒',
                 endhome: '神戸'
@@ -34,7 +76,7 @@ export function RouteList() {
         <>
             {/* リストのトップ画面 */}
             <div className={style.listTop}>
-                <span className={style.closeBtn}></span>
+                <button className={style.closeBtn} onClick={onCloseSample}></button>
                 <p>リスト</p>
             </div>
 
@@ -53,12 +95,14 @@ export function RouteList() {
                             <div key={idx} className={style.end}>
                                 <p className={style.homeName}>{v.endhome}</p>
                             </div>
-                            {/* <span className={style.chevronRight}></span> */}
+                            <span className={style.chevronRight}></span>
                         </div>
                     </>
                 )}
-                <div className={style.regiBtn}>
-                    <button>登録</button>
+                <div className={style.regiBg}>
+                    <div className={style.regiBtn}>
+                        <button>登録</button>
+                    </div>
                 </div>
             </div>
         </>

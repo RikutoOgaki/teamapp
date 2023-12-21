@@ -11,7 +11,9 @@ export function Modal(props: Props) {
     return (
         <>
             <div>
-                {props.children}
+                <div>
+                    {props.children}
+                </div>
             </div>
         </>
     )

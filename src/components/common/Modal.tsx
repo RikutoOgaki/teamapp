@@ -10,7 +10,7 @@ type Props = {
 export function Modal(props: Props) {
     return (
         <>
-            <div>
+            <div className={style.modalWrap}>
                 <div>
                     {props.children}
                 </div>

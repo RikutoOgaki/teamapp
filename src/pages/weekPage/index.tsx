@@ -10,16 +10,20 @@ export default function WeekPage() {
     return (
         <>
             <div className={style.wrap}>
-                <div className={style.link}>
-                    <Link href={''}> ＜ 戻る</Link>
+                <div className={style.linkBox}>
+                    <Link href={''} className={style.link}> ＜ 戻る</Link>
                 </div>
                 <div className={style.listBox}>
                     {week.map((v, idx) =>
                         <div>
-                            <div>
-                                <p>{ }</p>
+                            <div className={style.day}>
+                                <p className={style.dayText}>{ }</p>
                             </div>
-
+                            <div className={style.home}>
+                                <p></p>
+                                <span></span>
+                                <p></p>
+                            </div>
                         </div>
                     )}
                 </div>

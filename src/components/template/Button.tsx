@@ -3,8 +3,8 @@ import style from '@/styles/components/template/button.module.scss'
 
 type Props = {
     text: string,
-    className: string | undefined,
-    handleOnClick: () => void
+    className?: string | undefined,
+    handleOnClick?: () => void
 }
 
 export function Button(props: Props) {

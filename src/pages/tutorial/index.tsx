@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import style from '@/styles/tutorial/01/index.module.scss'
+import style from '@/styles/tutorial/index.module.scss'
 import { TimeClock } from '@/components/common/TimeClock'
 
 export default function Tutorial() {

@@ -11,10 +11,18 @@ export default function Register() {
                 </div>
                 <div className={style.trainContents}>
                     <div className={style.trainBox}>
-                        <p>茨木市</p>
-                        <span>→</span>
-                        <p>大阪梅田</p>
+                        <p className={style.trainText}>茨木市<span>→</span>大阪梅田</p>
                     </div>
+                    <div className={style.trainData}>
+                        <p></p>
+                        <p>8:23<span>→</span>9:00<span>(37分)</span></p>
+                        <p>乗換1回<span>24.9km</span>620円</p>
+                    </div>
+                    <div className={style.btnBox}>
+                        <Button text='1本前' className={style.btnAfter} />
+                        <Button text='1本後' className={style.btnBefore} />
+                    </div>
+                    <div></div>
                 </div>
                 <div className={style.btnBox}>
                     <Button text='登録' className={style.btn} />

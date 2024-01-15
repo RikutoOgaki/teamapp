@@ -1,14 +1,16 @@
 .wrap {
     width: 100%;
     height: 100vh;
-    padding: 1rem;
+    // padding: 1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     .linkBox {
         width: 100%;
-        height: 2rem;
+        height: 5vh;
+        margin: .5rem;
+        padding: .5rem;
 
         .link {
             text-decoration: none;
@@ -19,31 +21,40 @@
 
     .trainContents {
         width: 100%;
+        height: 70vh;
 
-        .trainBox {
-            background-color: #46A667;
-            min-width: 5rem;
-            max-width: 10rem;
-            height: 2rem;
-            padding: .6rem;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .trainBoxWrap {
+            padding: .5rem;
 
-            .trainText {
-                color: #ffffff;
-                font-size: 1rem;
+            .trainBox {
+                background-color: #46A667;
+                min-width: 5rem;
+                max-width: 10rem;
+                height: 2rem;
+                padding: .6rem;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .trainText {
+                    color: #ffffff;
+                    font-size: 1rem;
+                }
             }
         }
 
-        .trainData {}
+        .trainData {
+            width: 100%;
+            padding: .3rem 0 0 1rem;
+        }
 
         .btnBox {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem;
 
             .btnAfter {
                 width: 4.5rem;
@@ -65,8 +76,64 @@
         }
     }
 
+    .routeBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .start {
+            width: 100%;
+            height: 5rem;
+            background-color: #efefef;
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem;
+
+
+            .time {
+                list-style: none;
+                width: 10%;
+            }
+
+            .tag {
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: #46A667;
+                color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+            }
+        }
+
+        .detail {
+            width: 100%;
+            height: 5rem;
+            background-color: #ffffff;
+            padding: 1rem;
+
+            .acces {
+                list-style: none;
+
+            }
+        }
+
+        .end {
+            width: 100%;
+            height: 5rem;
+            background-color: #efefef;
+            padding: 1rem;
+        }
+    }
+
     .btnBox {
         width: 100%;
+        height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -12,21 +12,26 @@ async function Get(state: any, setState: Function) {
 
     const result = await res.json()
 
-    setState(result)
+    setState(result.result)
 }
 
 export default function Sample02() {
-
     const [state, setState] = useState()
+
+    useEffect(() => {
+        Get(state, setState)
+    }, [])
+
 
     console.log(state);
 
 
     return (
         <>
-            <button
+            {/* <button
                 onClick={() => Get(state, setState)}
-            >データ取得</button>
+            >データ取得</button> */}
+            {/* {state} */}
         </>
     )
 }

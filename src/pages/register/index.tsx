@@ -14,8 +14,13 @@ export default function Register() {
                         <p className={style.trainText}>茨木市<span>→</span>大阪梅田</p>
                     </div>
                     <div className={style.trainData}>
-                        <p></p>
-                        <p>8:23<span>→</span>9:00<span>(37分)</span></p>
+                        <p>1/12(金)</p>
+                        <p className={style.timeText}>
+                            8:23
+                            <span>→</span>
+                            9:00
+                            <span className={style.item}>(37分)</span>
+                        </p>
                         <p>乗換1回<span>24.9km</span>620円</p>
                     </div>
                     <div className={style.btnBox}>

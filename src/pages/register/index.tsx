@@ -36,7 +36,7 @@ export default function Register() {
                 <div className={style.trainContents}>
                     <div className={style.trainBoxWrap}>
                         <div className={style.trainBox}>
-                            <p className={style.trainText}>茨木市<span>→</span>大阪梅田</p>
+                            <p className={style.trainText}>大阪梅田<span>→</span>十三</p>
                         </div>
                     </div>
                     <div className={style.trainData}>
@@ -66,19 +66,17 @@ export default function Register() {
                         {/* 路線の情報のデータ */}
                         <div className={style.detail}>
                             <ul className={style.acces}>
-                                <li>{starthome.id}発</li>
-                                <li>
+                                <li className={style.center}>
                                     <span className={style.line}></span>
-                                    <div>{starthome.train} {starthome.type}</div>
+                                    <p className={style.text}>{starthome.train} {starthome.type}</p>
                                 </li>
-                                <li>{endhome.id}着</li>
                             </ul>
                         </div>
 
                         {/* 着に関するデータ */}
                         <div className={style.end}>
                             <ul className={style.time}><li>{endhome.time}</li></ul>
-                            <p className={style.tag}>発</p>
+                            <p className={style.tag}>着</p>
                             <div>
                                 <p>{endhome.endhome}</p>
                             </div>

@@ -1,15 +1,30 @@
 import { useState, useEffect } from 'react'
+import style from '@/styles/tutorial/index.module.scss'
+import { TimeClock } from '@/components/common/TimeClock'
+
+export default function Tutorial() {
 
     // link先を管理するstate
     const [link, setLink] = useState()
 
     // 今何個目のチュートリアルか管理するstate
     const [flg, setFlg] = useState(0)
-
+    // ０なら一個目のチュートリアル画面の表示
+    // １なら二個目のチュートリアル画面の表示
+    // ２なら三個目のチュートリアル画面の表示
 
     return (
         <>
-
+            <div
+                className={style.homeWrap}
+                onClick={() => {
+                    setFlg(flg + 1)
+                    if (flg === 3) {
+                        location.href = ''
+                    }
+                }}
+            >
+                <div className={flg === 0 ? style.noCover : style.yesCover}>
                     <div className={style.myRoute}>
                         <div className={style.subMyRoute}>
                             <div className={style.start}>
@@ -47,7 +62,27 @@ import { useState, useEffect } from 'react'
                     </div>
                     <TimeClock />
                 </div>
-
+                <div className={
+                    flg === 0 ? style.yesCoverOne :
+                        flg === 1 ? style.yesCoverTwo :
+                            flg === 2 ? style.yesCoverThree :
+                                ''
+                }>
+                    <div className={style.chat}>
+                        {flg === 0 ?
+                            <p>出発駅と到着駅をタップし<br />
+                                駅を入力してください。
+                            </p> :
+                            flg === 1 ?
+                                <p>出発駅と到着駅をタップし<br />
+                                    駅を入力してください。
+                                </p> :
+                                flg === 2 ?
+                                    <p>出発駅と到着駅をタップし<br />
+                                        駅を入力してください。
+                                    </p> :
+                                    null
+                        }
                     </div>
                 </div>
             </div>

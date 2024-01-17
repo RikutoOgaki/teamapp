@@ -27,20 +27,20 @@ export default function Sample02() {
         Get(state, setState)
     }, [])
 
-    useEffect(() => {
-        const url = 'https://ntool.online/data/train_all.json'
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-            })
-    }, [])
+    // useEffect(() => {
+    //     const url = 'https://ntool.online/data/train_all.json'
+    //     fetch(url)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             console.log(data);
+    //         })
+    // }, [])
 
 
 
 
     console.log(state);
-    console.log(delay);
+    // console.log(delay);
 
 
 

@@ -19,6 +19,24 @@
             width: 100%;
             height: 4rem;
             background-color: #46A667;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            .icon {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: #ffffff;
+                transform: rotate(45deg);
+                font-size: 1.2rem;
+            }
+
+            .text {
+                color: #ffffff;
+            }
         }
 
         .contents {

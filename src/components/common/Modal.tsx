@@ -11,7 +11,7 @@ type Props = {
 
 export function Modal(props: Props) {
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(props.boolean)
 
     return (
         <>
@@ -20,7 +20,7 @@ export function Modal(props: Props) {
                     <div className={style.top}>
                         <FaPlus
                             className={style.icon}
-                            onClick={() => setModal(!modal)}
+                            onClick={() => setModal(true)}
                         />
                         <p className={style.text}>通知</p>
                     </div>

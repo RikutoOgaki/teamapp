@@ -76,11 +76,12 @@ export default function Home() {
 
     return (
         <>
-            {/* {!modal &&
+            {!modal ?
                 <Modal boolean={modal}>
 
-                </Modal>
-            } */}
+                </Modal> :
+                null
+            }
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>
                     {week.route.map((v, idx) =>

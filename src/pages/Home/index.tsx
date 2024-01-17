@@ -76,9 +76,36 @@ export default function Home() {
 
     return (
         <>
+            {/* 遅延通知用のModalComponent */}
             {!modal ?
                 <Modal boolean={modal}>
-
+                    <div className={style.modalBox}>
+                        <div className={style.top}>
+                            <FaPlus
+                                className={style.icon}
+                                onClick={() => setModal(!modal)}
+                            />
+                            <p className={style.text}>通知</p>
+                        </div>
+                        <div className={style.contents}>
+                            <div className={style.imgBox}>
+                                <figure>
+                                    <img src="/img/train.png" alt="黒黄" />
+                                </figure>
+                                <div className={style.textBox}>
+                                    <p className={style.big}>遅れが発生しています</p>
+                                    <p className={style.small}>
+                                        8:04頃 阪急京都本線<br />
+                                        上新庄〜淡路駅間で<br />
+                                        路線トラブルが発生
+                                    </p>
+                                    <p className={style.big}>約20分</p>
+                                    <p className={style.small}>の遅れが出ています。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={style.bottom}></div>
+                    </div>
                 </Modal> :
                 null
             }
@@ -99,27 +126,33 @@ export default function Home() {
                             </div> : null
                     )}
                     <div className={style.link}>
-                        <div
-                            className={style.listIconBox}
-                        // 自分が登録したリスト表示の下から画面が出てくる
-                        // onClick={}
-                        >
-                            <FaRegFileAlt className={style.fileIcon} />
-                        </div>
-                        <div
-                            className={style.addTrainIconBox}
-                        // 決まった日の電車を登録する画面がでてくる
-                        // onCLick={}
-                        >
-                            <FaRegFileAlt className={style.addTrainIcon} />
-                            {/* <FaPlus className={style.plus} /> */}
+                        <Link href={''} className={style.linkBox}>
+                            <div
+                                className={style.listIconBox}
+                            // 自分が登録したリスト表示の下から画面が出てくる
+                            // onClick={}
+                            >
+                                <FaRegFileAlt className={style.fileIcon} />
+                            </div>
+                        </Link>
 
-                        </div>
-                        <div className={style.weekIconBox}>
-                            <Link href={'../weekPage'}>
+                        <Link href={''} className={style.linkBox}>
+                            <div
+                                className={style.addTrainIconBox}
+                            // 決まった日の電車を登録する画面がでてくる
+                            // onCLick={}
+                            >
+                                <FaRegFileAlt className={style.addTrainIcon} />
+                                <FaPlus className={style.plus} />
+
+                            </div>
+                        </Link>
+
+                        <Link href={'../weekPage'} className={style.linkBox}>
+                            <div className={style.weekIconBox}>
                                 <CiMemoPad className={style.weekMemo} />
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className={style.transferPlan}>
@@ -138,8 +171,8 @@ export default function Home() {
                             {flg === false ?
                                 <div className={style.message}>
                                     <p className={style.maru}><span>◯</span>遅延はありません</p>
-                                    <p className={style.san}><span>△</span>１５分の遅延があります</p>
-                                    <p className={style.batu}><span>✗</span>運転見合わせ</p>
+                                    {/* <p className={style.san}><span>△</span>１５分の遅延があります</p>
+                                    <p className={style.batu}><span>✗</span>運転見合わせ</p> */}
                                 </div>
                                 :
                                 <div className={style.message}>

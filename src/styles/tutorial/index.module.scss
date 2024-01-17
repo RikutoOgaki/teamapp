@@ -1,3 +1,5 @@
+// Homeのstyle ここから
+
 .homeWrap {
     width: 100%;
     height: 100vh;
@@ -6,10 +8,14 @@
     .myRoute {
         width: 100%;
         height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
 
         .subMyRoute {
             width: 17rem;
-            margin: 0 auto;
+            margin-left: 2rem;
             height: 100%;
             display: flex;
             justify-content: center;
@@ -73,12 +79,86 @@
                 }
             }
         }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .5rem;
+
+            .listIconBox {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-color: #46A667;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .fileIcon {
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                }
+
+            }
+
+            .addTrainIconBox {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-color: #46A667;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                .addTrainIcon {
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                    padding-right: 4px;
+                }
+
+                .plus {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    color: #ffffff;
+                    font-size: .6rem;
+                    font-weight: bold;
+
+                }
+            }
+
+            .linkBox {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .weekIconBox {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 50%;
+                    background-color: #46A667;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    .weekMemo {
+                        font-size: 1.7rem;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
     }
 
     .transferPlan {
         width: 100%;
         height: 30vh;
-        z-index: 1;
 
         .tabBox {
             width: 100%;
@@ -115,45 +195,550 @@
                 height: 25vh;
                 background-color: #f8f8f8;
 
-                position: absolute;
-                width: 100%;
-                height: 70vh;
-                top: 30vh;
-                background-color: rgba($color: #000000, $alpha: .5);
-                z-index: 999;
-                padding: 1rem;
+                .message {
+                    padding: 1rem;
 
-                .chat {
-                    position: relative;
-                    top: 1rem;
-                    display: inline-block;
-                    margin: 1.5em 0;
-                    padding: 7px 10px;
-                    min-width: 100%;
-                    max-width: 100%;
-                    height: 4rem;
-                    color: #555;
-                    font-size: 16px;
-                    background: #ffffff;
-                    margin: 0;
-                    padding: 0;
-                    border-radius: 5px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    .maru {
+                        color: #8FC4B1;
+                        font-weight: bold;
+                    }
 
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        bottom: 100%;
-                        left: 50%;
-                        margin-left: -15px;
-                        border: 10px solid transparent;
-                        border-top: 25px solid #ffffff;
-                        transform: rotate(180deg);
+                    .san {
+                        color: #D6AB58;
+                        font-weight: bold;
+                    }
+
+                    .batu {
+                        color: #D45C5C;
+                        font-weight: bold;
                     }
                 }
             }
         }
     }
+
+    .coverTop {
+        width: 100%;
+        height: 30vh;
+        position: absolute;
+        top: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+    }
+
+    .coverBigTop {
+        width: 100%;
+        height: 63vh;
+        position: absolute;
+        top: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+
+        .chat {
+            position: relative;
+            top: 24rem;
+            min-width: 100%;
+            max-width: 100%;
+            height: 4rem;
+            color: #555;
+            font-size: 1rem;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            // border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 10px solid transparent;
+                border-top: 25px solid #ffffff;
+                // transform: rotate(180deg);
+            }
+        }
+    }
+
+    .coverBottom {
+        width: 100%;
+        height: 70vh;
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+
+        .chat {
+            position: relative;
+            top: 1.5rem;
+            min-width: 100%;
+            max-width: 100%;
+            height: 4rem;
+            color: #555;
+            font-size: 1rem;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            // border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 10px solid transparent;
+                border-top: 25px solid #ffffff;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .coverBigBottom {
+        width: 100%;
+        height: 37vh;
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+
+        .chat {
+            position: relative;
+            top: 1.5rem;
+            min-width: 100%;
+            max-width: 100%;
+            height: 4rem;
+            color: #555;
+            font-size: 1rem;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            // border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 10px solid transparent;
+                border-top: 25px solid #ffffff;
+                transform: rotate(180deg);
+            }
+        }
+    }
 }
+
+// ここまで
+
+// リスト表示のstyle ここから
+
+.listWrap {
+    width: 100%;
+    height: 100vh;
+
+    .listTop {
+        width: 100%;
+        height: 92px;
+        background-color: #f8f8f8;
+        overflow: auto;
+
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+
+    .closeBtn {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(118, 118, 128, 0.12);
+        margin: 12px 15px 0 auto;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 13px;
+            background: #3c3c43;
+            border-radius: 1px;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    .listMain {
+        width: 100%;
+        height: calc(100vh - 92px - 100px);
+        background-color: #e9e9e9;
+        overflow: auto;
+
+        position: relative;
+
+        .chat {
+            position: relative;
+            top: 10rem;
+            min-width: 20rem;
+            max-width: 20rem;
+            height: 4rem;
+            color: #555;
+            font-size: 1rem;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 0;
+            // border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 10px 5px 5px rgba($color: #262626, $alpha: .4);
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 10px solid transparent;
+                border-top: 25px solid #ffffff;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .listContents {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 320px;
+        height: 56px;
+        font-size: 1.3rem;
+        // border: 1px solid #333;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        overflow: auto;
+        position: relative;
+
+        &:first-child {
+            margin-top: 20px;
+        }
+
+        .start {
+            width: 100px;
+            text-align: center;
+        }
+
+        .end {
+            width: 100px;
+            text-align: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url('/img/switchArrow.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            top: 50%;
+            left: 44%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .switchArrow {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    // 往復矢印
+    .arrowLeft {
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        color: #a5a0a0;
+        line-height: 1;
+        position: relative;
+        width: 1em;
+        height: 0.1em;
+        background: currentColor;
+
+        &::before {
+            content: '';
+            width: 0.45rem;
+            height: 0.45rem;
+            border: 0.1rem solid #a5a0a0;
+            border-right: 0;
+            border-bottom: 0;
+            transform: rotate(-45deg);
+            transform-origin: top left;
+            position: absolute;
+            top: 50%;
+            left: -0.05em;
+            box-sizing: border-box;
+            border-radius: 1px;
+        }
+    }
+
+    .arrowRight {
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        color: #a5a0a0;
+        line-height: 1;
+        position: relative;
+        width: 1em;
+        height: 0.1em;
+        background: currentColor;
+
+        &::before {
+            content: '';
+            width: 0.45rem;
+            height: 0.45rem;
+            border: 0.1rem solid #a5a0a0;
+            border-left: 0;
+            border-bottom: 0;
+            transform: rotate(45deg);
+            transform-origin: top right;
+            position: absolute;
+            top: 50%;
+            right: -0.05em;
+            box-sizing: border-box;
+            border-radius: 1px;
+        }
+    }
+
+    // もっと見る矢印
+    .chevronRight {
+        display: inline-block;
+        vertical-align: middle;
+        color: #626161;
+        line-height: 1;
+        position: relative;
+        width: 0.7rem;
+        height: 0.7rem;
+        transform: translateX(-25%) rotate(45deg);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: currentColor;
+            border-radius: 0.1rem;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0.1rem;
+        }
+
+        &::after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 0.08em;
+        }
+    }
+
+
+    .regiBg {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 6rem;
+        background-color: #e9e9e9;
+        box-shadow: 0px -10px 5px 0px #E9E9E9;
+
+        .regiBtn {
+            position: fixed;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            button {
+                width: 7rem;
+                height: 2.5rem;
+                color: #fff;
+                background-color: #f6af39;
+                border: none;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+// ここまで
+
+// １週間のstyle ここから
+
+.weekWrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .coverWeekTop {
+        width: 100%;
+        height: 10vh;
+        position: absolute;
+        top: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+    }
+
+    .coverWeekBottom {
+        width: 100%;
+        height: 25vh;
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: .4);
+        padding: 1rem;
+
+        .chat {
+            position: relative;
+            top: 1rem;
+            min-width: 20rem;
+            max-width: 20rem;
+            height: 4rem;
+            color: #555;
+            font-size: 1rem;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 0;
+            // border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 10px solid transparent;
+                border-top: 25px solid #ffffff;
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+
+    .linkBox {
+        width: 100%;
+
+        .link {
+            color: #a6a6a7;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+    }
+
+    .listBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        .dayList {
+            width: 20rem;
+            height: 3.5rem;
+            display: flex;
+            border: 1px solid #D9D9D9;
+            border-radius: 5px;
+
+            .day {
+                .dayText {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #F8F8F8;
+                    border-radius: 5px;
+                }
+            }
+
+            .home {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 3rem;
+
+                & p {
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+}
+
+// ここまで
+
+// 最後の案内画面 ここから
+
+.lastWrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #46A667;
+    gap: 1.3rem;
+
+    & figure {
+        margin-right: 2.4rem;
+    }
+
+    .btn {
+        border: none;
+        background-color: #F6AF39;
+        width: 7rem;
+        height: 2rem;
+        color: #ffffff;
+        border-radius: 5px;
+    }
+}
+
+// ここまで

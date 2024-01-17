@@ -19,8 +19,8 @@ export default function Tutorial() {
                 className={style.homeWrap}
                 onClick={() => {
                     setFlg(flg + 1)
-                    if (flg === 2) {
-                        location.href = '/Home'
+                    if (flg === 3) {
+                        location.href = ''
                     }
                 }}
             >

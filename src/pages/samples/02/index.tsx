@@ -15,15 +15,33 @@ async function Get(state: any, setState: Function) {
     setState(result.result)
 }
 
+
+
+
+
 export default function Sample02() {
     const [state, setState] = useState()
+    const [delay, setDelay] = useState()
 
     useEffect(() => {
         Get(state, setState)
     }, [])
 
+    useEffect(() => {
+        const url = 'https://ntool.online/data/train_all.json'
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+    }, [])
+
+
+
 
     console.log(state);
+    console.log(delay);
+
 
 
     return (

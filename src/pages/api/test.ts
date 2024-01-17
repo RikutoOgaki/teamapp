@@ -12,29 +12,29 @@ type Output = {
 async function getTrainData(client: any) {
     const result = await client.query(`
     SELECT 
-    test.id AS route_id, 
-    test.routeName, 
+    routes.id AS route_id, 
+    routes.routeName, 
     (
         SELECT JSON_AGG(
             json_build_object(
-                'homeName', test1.homeName,
+                'homeName', homes.homeName,
                 'some', (
                     SELECT JSON_AGG(
                         json_build_object(
-                            'time', test2.time,
-                            'train', test2.train
+                            'time', times.time,
+                            'train', times.train
                         )
                     )
-                    FROM test2
-                    WHERE test2.homeId = test1.id
+                    FROM times
+                    WHERE times.homeId = homes.id
                 )
             )
         )
-        FROM test1
-        WHERE test1.routeId = test.id
-    ) AS test1
+        FROM homes
+        WHERE homes.routeId = routes.id
+    ) AS homes
 FROM 
-    test
+    routes
     `)
 
     return result

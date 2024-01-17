@@ -4,6 +4,7 @@ import { TimeClock } from '@/components/common/TimeClock'
 import { FaListUl, FaPlus, FaRegFileAlt } from 'react-icons/fa'
 import { CiMemoPad } from "react-icons/ci"
 import { FaTrainSubway } from 'react-icons/fa6';
+import { Modal } from '@/components/common/Modal'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
@@ -70,8 +71,16 @@ export default function Home() {
     })
 
 
+    const [modal, setModal] = useState(false)
+
+
     return (
         <>
+            {/* {!modal &&
+                <Modal boolean={modal}>
+
+                </Modal>
+            } */}
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>
                     {week.route.map((v, idx) =>
@@ -106,7 +115,9 @@ export default function Home() {
 
                         </div>
                         <div className={style.weekIconBox}>
-                            <CiMemoPad className={style.weekMemo} />
+                            <Link href={'../weekPage'}>
+                                <CiMemoPad className={style.weekMemo} />
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -2,44 +2,123 @@ import { useState, useEffect } from 'react'
 import style from '@/styles/components/common/timeclock.module.scss'
 import dayjs from 'dayjs'
 
+
+type State = {
+    routes: Array<TrainData>
+}
+
+type TrainData = {
+    id: number,
+    routeName: string,
+    homes: Array<HomeData>
+}
+
+type HomeData = {
+    homeName: string,
+    some: Array<SomeData>
+}
+
+type SomeData = {
+    time: string,
+    train: string,
+    direction: string
+}
+
 export function TimeClock() {
 
+    // 現在時刻を取得
+    const now = dayjs()
+
     // 電車の仮データ
-    const [data, setData] = useState({
-        rotes: [
+    const [data, setData] = useState<State>({
+        routes: [
             {
                 id: 1,
-                time: '11:45',
-                some: '準特急',
-                train: '大阪・神戸方面'
-            },
-            {
-                id: 2,
-                time: '11:49',
-                some: '普通',
-                train: '姫路方面'
-            },
-            {
-                id: 3,
-                time: '11:55',
-                some: '準急',
-                train: '奈良方面'
-            },
+                routeName: '阪急京都本線',
+                homes: [
+                    {
+                        homeName: '大阪梅田',
+                        some: [
+                            {
+                                time: '05:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:05',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:10',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:15',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                        ]
+                    },
+                    {
+                        homeName: '十三',
+                        some: [
+                            {
+                                time: '05:05:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:10:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:15:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '05:20:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                        ]
+                    }
+                ]
+            }
         ]
     })
 
     // カウントダウンのデータを所持するための値
-    const [min, setMin] = useState(0)
-    const [sec, setSec] = useState(0)
-
-
-
+    const [min, setMin] = useState(0)// 分
+    const [sec, setSec] = useState(0)// 秒
 
 
     // 現在の月、日、曜日を取得
+    const Year = dayjs().get('year')
     const Month = dayjs().get('M') + 1
     const Day = dayjs().get('D')
     const week = dayjs().get('d')
+
+    // 指定の時刻
+    const time = data.routes.map((v, idx) => v.homes.map((x, idx2) => x.some.map((z, idx3) => {
+        const targetTime = dayjs(`${Year}-${Month}-${Day} ${z.time}`)
+        const calcTime = targetTime.diff(now)
+        return calcTime
+    }
+    )))
+
+    console.log(time);
+
+
+    useEffect(() => {
+
+        setMin(Number(dayjs(time).format('mm')))
+        setSec(Number(dayjs(time).format('ss')))
+
+    }, [min, sec])
 
 
 

@@ -11,21 +11,30 @@ type Output = {
 
 async function getTrainData(client: any) {
     const result = await client.query(`
-    SELECT
-        groups.group_id,
-        groups.name,
-        item_arrays.item_array AS items
-    FROM
-        groups
-    LEFT JOIN LATERAL (
-    SELECT
-        json_agg(items ORDER BY item_ids.i) AS item_array
-    FROM
-        unnest(groups.item_ids) WITH ORDINALITY AS item_ids(item_id, i)
-    JOIN items USING (item_id)
-        ) item_arrays ON true
-    ORDER BY
-    groups.group_id;
+    SELECT 
+    routes.id AS route_id, 
+    routes.routeName, 
+    (
+        SELECT JSON_AGG(
+            json_build_object(
+                'homeName', homes.homeName,
+                'some', (
+                    SELECT JSON_AGG(
+                        json_build_object(
+                            'time', times.time,
+                            'train', times.train
+                        )
+                    )
+                    FROM times
+                    WHERE times.homeId = homes.id
+                )
+            )
+        )
+        FROM homes
+        WHERE homes.routeId = routes.id
+    ) AS homes
+FROM 
+    routes
     `)
 
     return result
@@ -55,7 +64,7 @@ export default async function handler(
         const result = await getTrainData(client)
 
         res.status(200).json({
-            result: result
+            result: result.rows
         })
     } finally {
         client.release()

@@ -21,7 +21,7 @@ export default function LoginForm() {
 
       <div
         className={style.topWrap}
-        onClick={() => location.href = '/tutorial/01'}
+        onClick={() => location.href = '/tutorial'}
       >
         <img className={style.left} src="/img/topleft.png" alt="left" />
         <img className={style.logo} src="/img/logo.png" alt="logo" />

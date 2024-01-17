@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import style from '@/styles/Home/index.module.scss'
 import { TimeClock } from '@/components/common/TimeClock'
-import { FaListUl, FaPlus } from 'react-icons/fa'
+import { FaListUl, FaPlus, FaRegFileAlt } from 'react-icons/fa'
+import { CiMemoPad } from "react-icons/ci"
 import { FaTrainSubway } from 'react-icons/fa6';
+import { Modal } from '@/components/common/Modal'
 import dayjs from 'dayjs'
+import Link from 'next/link'
 
 // 一番見るページになる
 
@@ -68,8 +71,16 @@ export default function Home() {
     })
 
 
+    const [modal, setModal] = useState(false)
+
+
     return (
         <>
+            {/* {!modal &&
+                <Modal boolean={modal}>
+
+                </Modal>
+            } */}
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>
                     {week.route.map((v, idx) =>
@@ -92,15 +103,21 @@ export default function Home() {
                         // 自分が登録したリスト表示の下から画面が出てくる
                         // onClick={}
                         >
-                            <FaListUl className={style.listIcon} />
+                            <FaRegFileAlt className={style.fileIcon} />
                         </div>
                         <div
                             className={style.addTrainIconBox}
                         // 決まった日の電車を登録する画面がでてくる
                         // onCLick={}
                         >
-                            <FaTrainSubway className={style.addTrainIcon} />
-                            <FaPlus className={style.plus} />
+                            <FaRegFileAlt className={style.addTrainIcon} />
+                            {/* <FaPlus className={style.plus} /> */}
+
+                        </div>
+                        <div className={style.weekIconBox}>
+                            <Link href={'../weekPage'}>
+                                <CiMemoPad className={style.weekMemo} />
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -119,7 +136,9 @@ export default function Home() {
                         <div className={style.messageBox}>
                             {flg === false ?
                                 <div className={style.message}>
-                                    <p>遅延はありません</p>
+                                    <p className={style.maru}><span>◯</span>遅延はありません</p>
+                                    <p className={style.san}><span>△</span>１５分の遅延があります</p>
+                                    <p className={style.batu}><span>✗</span>運転見合わせ</p>
                                 </div>
                                 :
                                 <div className={style.message}>
@@ -129,26 +148,6 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                {/* <div className={style.timeDown}>
-                    <div className={style.dateTime}>
-
-                        <p>11/2(木)</p>
-                        <p>8時23分</p>
-                    </div>
-                    <p className={style.text}>大阪・神戸方面</p>
-                    <div className={style.timeClock}>
-
-                        <span>＜</span>
-                        <p>
-                            <span className={style.bold}>13</span>
-                            分
-                            <span className={style.bold}>32</span>
-                            秒
-                        </p>
-                        <span>＞</span>
-                    </div>
-                    <p className={style.textBold}>先発</p>
-                </div> */}
 
                 <TimeClock />
             </div>

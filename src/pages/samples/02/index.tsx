@@ -12,21 +12,44 @@ async function Get(state: any, setState: Function) {
 
     const result = await res.json()
 
-    setState(result)
+    setState(result.result)
 }
 
-export default function Sample02() {
 
+
+
+
+export default function Sample02() {
     const [state, setState] = useState()
+    const [delay, setDelay] = useState()
+
+    useEffect(() => {
+        Get(state, setState)
+    }, [])
+
+    // useEffect(() => {
+    //     const url = 'https://ntool.online/data/train_all.json'
+    //     fetch(url)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             console.log(data);
+    //         })
+    // }, [])
+
+
+
 
     console.log(state);
+    // console.log(delay);
+
 
 
     return (
         <>
-            <button
+            {/* <button
                 onClick={() => Get(state, setState)}
-            >データ取得</button>
+            >データ取得</button> */}
+            {/* {state} */}
         </>
     )
 }

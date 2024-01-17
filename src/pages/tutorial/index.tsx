@@ -1,8 +1,4 @@
 import { useState, useEffect } from 'react'
-import style from '@/styles/tutorial/01/index.module.scss'
-import { TimeClock } from '@/components/common/TimeClock'
-
-export default function Tutorial01() {
 
     // link先を管理するstate
     const [link, setLink] = useState()
@@ -10,13 +6,10 @@ export default function Tutorial01() {
     // 今何個目のチュートリアルか管理するstate
     const [flg, setFlg] = useState(0)
 
+
     return (
         <>
-            <div
-                className={style.homeWrap}
-                onClick={() => location.href = '/tutorial/02'}
-            >
-                <div className={style.noCover}>
+
                     <div className={style.myRoute}>
                         <div className={style.subMyRoute}>
                             <div className={style.start}>
@@ -54,11 +47,7 @@ export default function Tutorial01() {
                     </div>
                     <TimeClock />
                 </div>
-                <div className={style.yesCover}>
-                    <div className={style.chat}>
-                        <p>出発駅と到着駅をタップし<br />
-                            駅を入力してください。
-                        </p>
+
                     </div>
                 </div>
             </div>

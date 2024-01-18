@@ -26,9 +26,6 @@ type SomeData = {
 
 export function TimeClock() {
 
-    // 現在時刻を取得
-    const now = dayjs()
-
     // 電車の仮データ
     const [data, setData] = useState<State>({
         routes: [
@@ -40,22 +37,82 @@ export function TimeClock() {
                         homeName: '大阪梅田',
                         some: [
                             {
-                                time: '05:00',
+                                time: '12:00',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:05',
+                                time: '12:05',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:10',
+                                time: '12:10',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:15',
+                                time: '12:15',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:20',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:25',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:30',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:35',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:40',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:45',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:50',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '12:55',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '13:00',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '13:05',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '13:10',
+                                train: '普通',
+                                direction: '京都河原町行き'
+                            },
+                            {
+                                time: '13:15',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
@@ -65,22 +122,22 @@ export function TimeClock() {
                         homeName: '十三',
                         some: [
                             {
-                                time: '05:05:00',
+                                time: '12:05',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:10:00',
+                                time: '12:10',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:15:00',
+                                time: '12:15',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
                             {
-                                time: '05:20:00',
+                                time: '12:20',
                                 train: '普通',
                                 direction: '京都河原町行き'
                             },
@@ -91,10 +148,6 @@ export function TimeClock() {
         ]
     })
 
-    // カウントダウンのデータを所持するための値
-    const [min, setMin] = useState(0)// 分
-    const [sec, setSec] = useState(0)// 秒
-
 
     // 現在の月、日、曜日を取得
     const Year = dayjs().get('year')
@@ -102,25 +155,36 @@ export function TimeClock() {
     const Day = dayjs().get('D')
     const week = dayjs().get('d')
 
-    // 指定の時刻
-    const time = data.routes.map((v, idx) => v.homes.map((x, idx2) => x.some.map((z, idx3) => {
-        const targetTime = dayjs(`${Year}-${Month}-${Day} ${z.time}`)
-        const calcTime = targetTime.diff(now)
-        return calcTime
-    }
-    )))
+    // 現在のカウントダウン対象の time とそのインデックス
+    const [current, setCurrent] = useState({ index: 0, time: data.routes[0].homes[0].some[0].time });
 
-    console.log(time);
-
+    // カウントダウンの残り時間（秒）
+    const [countdown, setCountdown] = useState(dayjs(`${Year}-${Month}-${Day} ${current.time}`).diff(dayjs(), 'second'));
 
     useEffect(() => {
+        // カウントダウンが0になったら、次の time をカウントダウン対象にする
+        if (countdown <= 0) {
+            const nextIndex = current.index + 1;
+            const nextTime = data.routes[0].homes[0].some[nextIndex].time;
+            setCurrent({ index: nextIndex, time: nextTime });
+            setCountdown(dayjs(`${Year}-${Month}-${Day} ${nextTime}`).diff(dayjs(), 'second'));
+        }
+    }, [countdown]);
 
-        setMin(Number(dayjs(time).format('mm')))
-        setSec(Number(dayjs(time).format('ss')))
+    useEffect(() => {
+        // 1秒ごとにカウントダウンを更新する
+        const intervalId = setInterval(() => {
+            setCountdown(prevCountdown => prevCountdown - 1);
+        }, 1000);
 
-    }, [min, sec])
+        // コンポーネントがアンマウントされたら、インターバルをクリアする
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []);
 
-
+    const min = Math.floor(countdown / 60)
+    const sec = countdown % 60
 
     return (
         <>
@@ -137,16 +201,16 @@ export function TimeClock() {
                                             : week === 5 ? '金'
                                                 : week === 6 ? '土' : undefined})
                     </p>
-                    <p>発</p>
+                    <p>{current.time}発</p>
                 </div>
                 <p className={style.text}></p>
                 <div className={style.timeClock}>
                     {/* タイムダウンするロジックを作成する 現在時刻から発車するまでの時間を算出する */}
                     <span>＜</span>
                     <p>
-                        <span className={style.bold}>13</span>
+                        <span className={style.bold}>{min}</span>
                         分
-                        <span className={style.bold}>32</span>
+                        <span className={style.bold}>{sec}</span>
                         秒
                     </p>
                     <span>＞</span>

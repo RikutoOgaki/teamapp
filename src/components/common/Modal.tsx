@@ -6,7 +6,7 @@ import style from '@/styles/components/common/modal.module.scss'
 
 type Props = {
     children: React.ReactNode,
-    boolean: boolean
+    boolean: boolean,
 }
 
 export function Modal(props: Props) {

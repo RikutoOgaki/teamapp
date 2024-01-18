@@ -4,15 +4,11 @@ import { WeekData } from '@/types/WeekData'
 
 export default function WeekPage() {
 
-
-    // 1週間の表示用の簡易データ
-    const week = [0, 1, 2, 3, 4, 5, 6]
-
     return (
         <>
             <div className={style.wrap}>
                 <div className={style.linkBox}>
-                    <Link href={''} className={style.link}> ＜戻る</Link>
+                    <Link href={'../Home'} className={style.link}> ＜戻る</Link>
                 </div>
                 <div className={style.listBox}>
                     {WeekData.map((v, idx) =>

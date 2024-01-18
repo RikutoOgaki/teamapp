@@ -73,17 +73,30 @@ export default function Home() {
 
     const [modal, setModal] = useState(false)
 
+    const [modaldisplay, setModalDisplay] = useState(false)
+
+    useEffect(() => {
+        if (!modaldisplay) {
+            setModal(true)
+            setModalDisplay(true)
+        }
+    }, [modaldisplay])
+
+    const closeModal = () => {
+        setModal(false)
+    }
+
 
     return (
         <>
             {/* 遅延通知用のModalComponent */}
-            {!modal ?
+            {modal &&
                 <Modal boolean={modal}>
                     <div className={style.modalBox}>
                         <div className={style.top}>
                             <FaPlus
                                 className={style.icon}
-                                onClick={() => setModal(!modal)}
+                                onClick={() => closeModal()}
                             />
                             <p className={style.text}>通知</p>
                         </div>
@@ -106,8 +119,7 @@ export default function Home() {
                         </div>
                         <div className={style.bottom}></div>
                     </div>
-                </Modal> :
-                null
+                </Modal>
             }
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>

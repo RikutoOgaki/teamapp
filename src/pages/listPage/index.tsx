@@ -8,32 +8,8 @@ export default function ListPage() {
         route: [
             {
                 routenum: 0,
-                starthome: '生駒',
-                endhome: '神戸'
-            },
-            {
-                routenum: 0,
-                starthome: '生駒',
-                endhome: '近鉄奈良'
-            },
-            {
-                routenum: 0,
-                starthome: '中崎町',
-                endhome: '生駒'
-            },
-            {
-                routenum: 0,
-                starthome: '生駒',
-                endhome: '嵯峨嵐山'
-            }, {
-                routenum: 0,
-                starthome: '生駒',
-                endhome: '神戸'
-            },
-            {
-                routenum: 0,
-                starthome: '生駒',
-                endhome: '近鉄奈良'
+                starthome: '大阪梅田',
+                endhome: '十三'
             },
         ]
     })

@@ -10,17 +10,18 @@
     .left {
         // margin-left: 10rem;
         position: absolute;
-        left: 0;
+        left: -20px;
     }
 
     .logo {
         margin-right: 2rem;
+        z-index: 999;
     }
 
     .right {
         // margin-right: 10rem;
         position: absolute;
-        right: 0;
+        right: -20px;
     }
 }
 

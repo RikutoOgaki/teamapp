@@ -4,10 +4,16 @@ import switchArrow from '@/public/img/switchArrow.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components//template/Button'
+import { TrainData } from '@/types/TrainData'
 
 export default function Search() {
 
     // 検索機能のためのデータ
+
+    // 検索したい駅名を保存するstate
+    const [start, setStart] = useState('')
+    const [end, setEnd] = useState('')
+
 
     // ボタンのデータを分けるためのstate
     const [state, setState] = useState(0);
@@ -25,14 +31,20 @@ export default function Search() {
                 <div className={style.serchBox}>
                     <div className={style.startHome}>
                         <p>出発駅</p>
-                        <input type="text" />
+                        <input
+                            type="text"
+                            onChange={(e) => setStart(e.target.value)}
+                        />
                     </div>
                     <figure>
                         <img src={'/img/switchArrow.png'} alt="切り替え" />
                     </figure>
                     <div className={style.endHome}>
                         <p>到着駅</p>
-                        <input type="text" />
+                        <input
+                            type="text"
+                            onChange={(e) => setStart(e.target.value)}
+                        />
                     </div>
                 </div>
 
@@ -60,12 +72,23 @@ export default function Search() {
                         type="date"
                         className={style.date}
                     />
-                    <input type="time" className={style.time} />
+                    <input
+                        type="time"
+                        className={style.time}
+                        onChange={(e) => setEnd(e.target.value)}
+                    />
                 </div>
 
                 <div className={style.btnBox}>
-                    <Button text='リセット' className={style.reset} />
-                    <Button text='登録' className={style.entry} />
+                    <Button
+                        text='リセット'
+                        className={style.reset}
+
+                    />
+                    <Button text='検索'
+                        className={style.entry}
+                        handleOnClick={() => location.href = '../register'}
+                    />
                 </div>
             </div>
 

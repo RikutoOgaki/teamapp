@@ -47,7 +47,7 @@ export default function Register() {
                             9:00
                             <span className={style.item}>(37分)</span>
                         </p>
-                        <p>乗換1回<span>24.9km</span>620円</p>
+                        <p>乗換なし<span>5.2km</span>170円</p>
                     </div>
                     <div className={style.btnBox}>
                         <Button text='1本前' className={style.btnAfter} />
@@ -85,7 +85,11 @@ export default function Register() {
                     </div>
                 </div>
                 <div className={style.btnBox}>
-                    <Button text='登録' className={style.btn} />
+                    <Button
+                        text='登録'
+                        className={style.btn}
+                        handleOnClick={() => location.href = '../listPage'}
+                    />
                 </div>
             </div>
         </>

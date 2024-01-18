@@ -7,7 +7,8 @@ import { Button } from '@/components//template/Button'
 
 export default function Search() {
 
-    const [state, setState] = useState();
+    // ボタンのデータを分けるためのstate
+    const [state, setState] = useState(0);
 
     return (
         <>
@@ -19,33 +20,47 @@ export default function Search() {
                     </Link>
                 </div>
 
-                <div className={style.search}>
+                <div className={style.serchBox}>
                     <div className={style.startHome}>
                         <p>出発駅</p>
                         <input type="text" />
                     </div>
-                    <span><Image src={switchArrow} alt="切り替え" /></span>
+                    <figure>
+                        <img src={'/img/switchArrow.png'} alt="切り替え" />
+                    </figure>
                     <div className={style.endHome}>
                         <p>到着駅</p>
                         <input type="text" />
                     </div>
                 </div>
 
-                <div>
-                    <button>出発</button>
-                    <button>到着</button>
-                    <button>始発</button>
-                    <button>終電</button>
+                <div className={style.typeBox}>
+                    <button
+                        onClick={() => setState(0)}
+                        className={state === 0 ? style.btnOn : style.btnOff}
+                    >出発</button>
+                    <button
+                        onClick={() => setState(1)}
+                        className={state === 1 ? style.btnOn : style.btnOff}
+                    >到着</button>
+                    <button
+                        onClick={() => setState(2)}
+                        className={state === 2 ? style.btnOn : style.btnOff}
+                    >始発</button>
+                    <button
+                        onClick={() => setState(3)}
+                        className={state === 3 ? style.btnOn : style.btnOff}
+                    >終電</button>
                 </div>
 
-                <div>
-                    <input type="date" />
-                    <input type="time" />
+                <div className={style.dataTime}>
+                    <input type="date" className={style.date} />
+                    <input type="time" className={style.time} />
                 </div>
 
-                <div>
-                    <Button text='リセット' />
-                    <Button text='登録' />
+                <div className={style.btnBox}>
+                    <Button text='リセット' className={style.reset} />
+                    <Button text='登録' className={style.entry} />
                 </div>
             </div>
 

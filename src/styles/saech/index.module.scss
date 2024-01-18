@@ -1,7 +1,10 @@
 .container {
     padding: 2rem;
+    width: 100%;
+    height: 100vh;
 
     .return {
+
         .link {
             display: flex;
             text-decoration: none;
@@ -43,7 +46,16 @@
         }
     }
 
-    .serch {
+
+    .serchBox {
+        width: 100%;
+        // height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
 
         .startHome {
             display: flex;
@@ -51,7 +63,7 @@
             outline: 1px solid #D9D9D9;
             border-radius: 5px;
 
-            p {
+            & p {
                 width: 109px;
                 height: 40px;
                 flex-shrink: 0;
@@ -65,13 +77,27 @@
                 background-color: #46A667;
             }
 
-            input {
+            & input {
                 width: 217px;
                 height: 40px;
                 border: none;
             }
         }
 
+
+        & figure {
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 3rem;
+
+            & img {
+                width: 2rem;
+                height: 2rem;
+                transform: rotate(90deg);
+            }
+        }
 
 
         .endHome {
@@ -80,7 +106,7 @@
             outline: 1px solid #D9D9D9;
             border-radius: 5px;
 
-            p {
+            & p {
                 width: 109px;
                 height: 40px;
                 flex-shrink: 0;
@@ -94,11 +120,119 @@
                 background-color: #46A667;
             }
 
-            input {
+            & input {
                 width: 217px;
                 height: 40px;
                 border: none;
             }
+        }
+    }
+
+    .typeBox {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+
+        .btnOn {
+            border: none;
+            width: 25%;
+            height: 100%;
+            background-color: #46A667;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 2px 2px 2px #262626;
+        }
+
+        .btnOff {
+            border: none;
+            width: 25%;
+            height: 100%;
+            background-color: rgba(#262626, .4);
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
+
+    .dataTime {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        // border: 1px solid blue;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 4rem;
+
+
+        input {
+            font-size: 1rem;
+            color: #333;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            -webkit-appearance: none; // iOSでのデフォルトのスタイルを削除
+            padding: 0; // パディングを設定して入力フィールドのサイズを調整
+            margin: 0; // マージンを設定して入力フィールドのサイズを調整
+
+            // ブラウザのデフォルトのスタイルをオーバーライドする
+            &::-webkit-calendar-picker-indicator,
+            &::-webkit-clear-button,
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+
+            // Firefoxでのデフォルトのスタイルをオーバーライドする
+            &::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+            }
+
+            // IEでのデフォルトのスタイルをオーバーライドする
+            &::-ms-clear {
+                display: none;
+            }
+        }
+
+        .date {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .btnBox {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 4rem;
+
+
+        .reset {
+            border: none;
+            width: 7rem;
+            height: 2rem;
+            background-color: rgba(#262626, .4);
+            color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .entry {
+            border: none;
+            width: 7rem;
+            height: 2rem;
+            background-color: #F6AF39;
+            color: #ffffff;
+            border-radius: 5px;
         }
     }
 }

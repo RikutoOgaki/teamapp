@@ -17,7 +17,7 @@ export default function Sample04() {
                         <p>戻る</p>
                     </a>
                 </div>
-                
+
                 <div className={style.search}>
                     <div className={style.startHome}>
                         <p>出発駅</p>

@@ -5,6 +5,7 @@ import { FaListUl, FaPlus, FaRegFileAlt } from 'react-icons/fa'
 import { CiMemoPad } from "react-icons/ci"
 import { FaTrainSubway } from 'react-icons/fa6';
 import { Modal } from '@/components/common/Modal'
+// import { RouteList } from '@/components/common/RouteList'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
@@ -87,6 +88,13 @@ export default function Home() {
     }
 
 
+    const [showRouteList, setShowRouteList] = useState(false);
+
+    const handleCloseSample = () => {
+        setShowRouteList(false);
+    };
+
+
     return (
         <>
             {/* 遅延通知用のModalComponent */}
@@ -138,17 +146,20 @@ export default function Home() {
                             </div> : null
                     )}
                     <div className={style.link}>
-                        <Link href={''} className={style.linkBox}>
+
+                        <Link href={'../listPage'} className={style.linkBox}>
                             <div
                                 className={style.listIconBox}
+                                onClick={() => setShowRouteList(true)}
                             // 自分が登録したリスト表示の下から画面が出てくる
                             // onClick={}
                             >
                                 <FaRegFileAlt className={style.fileIcon} />
                             </div>
+
                         </Link>
 
-                        <Link href={''} className={style.linkBox}>
+                        <Link href={'../search'} className={style.linkBox}>
                             <div
                                 className={style.addTrainIconBox}
                             // 決まった日の電車を登録する画面がでてくる
@@ -197,6 +208,10 @@ export default function Home() {
 
                 <TimeClock />
             </div>
+
+            {/* {showRouteList && (
+                <RouteList onCloseSample={handleCloseSample} />
+            )} */}
         </>
     )
 }

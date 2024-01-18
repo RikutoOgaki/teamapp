@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { OneDay } from '@/components/common/OneDay'
-import style from '@/styles/components/common/oneday.module.scss'
+import style from '@/styles/saech/oneday.module.scss'
 import switchArrow from '@/public/img/switchArrow.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Search() {
 
@@ -12,10 +13,10 @@ export default function Search() {
         <>
             <div className={style.container}>
                 <div className={style.return}>
-                    <a href="">
-                        <span className={style.chevronLeft}></span>
+                    <Link href="../weekPage" className={style.link}>
+                        <span className={style.chevronLeft}>＜</span>
                         <p>戻る</p>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className={style.search}>

@@ -103,9 +103,6 @@ export default function Home() {
                         </div>
                         <div className={style.contents}>
                             <div className={style.imgBox}>
-                                <figure>
-                                    <img src="/img/train.png" alt="黒黄" />
-                                </figure>
                                 <div className={style.textBox}>
                                     <p className={style.big}>遅れが発生しています</p>
                                     <p className={style.small}>

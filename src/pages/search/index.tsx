@@ -7,6 +7,8 @@ import { Button } from '@/components//template/Button'
 
 export default function Search() {
 
+    // 検索機能のためのデータ
+
     // ボタンのデータを分けるためのstate
     const [state, setState] = useState(0);
 
@@ -54,7 +56,10 @@ export default function Search() {
                 </div>
 
                 <div className={style.dataTime}>
-                    <input type="date" className={style.date} />
+                    <input
+                        type="date"
+                        className={style.date}
+                    />
                     <input type="time" className={style.time} />
                 </div>
 

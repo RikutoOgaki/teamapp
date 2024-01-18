@@ -5,7 +5,6 @@ import { FaListUl, FaPlus, FaRegFileAlt } from 'react-icons/fa'
 import { CiMemoPad } from "react-icons/ci"
 import { FaTrainSubway } from 'react-icons/fa6';
 import { Modal } from '@/components/common/Modal'
-// import { RouteList } from '@/components/common/RouteList'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
@@ -199,10 +198,6 @@ export default function Home() {
 
                 <TimeClock />
             </div>
-
-            {/* {showRouteList && (
-                <RouteList onCloseSample={handleCloseSample} />
-            )} */}
         </>
     )
 }

@@ -5,8 +5,6 @@ import { FaListUl, FaPlus, FaRegFileAlt } from 'react-icons/fa'
 import { CiMemoPad } from "react-icons/ci"
 import Link from 'next/link'
 
-import { RouteList } from '@/components/common/RouteList'
-
 import { Button } from '@/components/template/Button'
 
 

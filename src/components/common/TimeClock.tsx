@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import style from '@/styles/components/common/timeclock.module.scss'
 import dayjs from 'dayjs'
 
+import { TrainData } from '@/types/TrainData'
+
 
 type State = {
     routes: Array<TrainData>
@@ -26,128 +28,6 @@ type SomeData = {
 
 export function TimeClock() {
 
-    // 電車の仮データ
-    const [data, setData] = useState<State>({
-        routes: [
-            {
-                id: 1,
-                routeName: '阪急京都本線',
-                homes: [
-                    {
-                        homeName: '大阪梅田',
-                        some: [
-                            {
-                                time: '12:00',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:05',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:10',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:15',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:20',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:25',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:30',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:35',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:40',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:45',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:50',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:55',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '13:00',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '13:05',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '13:10',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '13:15',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                        ]
-                    },
-                    {
-                        homeName: '十三',
-                        some: [
-                            {
-                                time: '12:05',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:10',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:15',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                            {
-                                time: '12:20',
-                                train: '普通',
-                                direction: '京都河原町行き'
-                            },
-                        ]
-                    }
-                ]
-            }
-        ]
-    })
-
 
     // 現在の月、日、曜日を取得
     const Year = dayjs().get('year')
@@ -156,7 +36,7 @@ export function TimeClock() {
     const week = dayjs().get('d')
 
     // 現在のカウントダウン対象の time とそのインデックス
-    const [current, setCurrent] = useState({ index: 0, time: data.routes[0].homes[0].some[0].time });
+    const [current, setCurrent] = useState({ index: 0, time: TrainData.routes[0].homes[0].some[0].time });
 
     // カウントダウンの残り時間（秒）
     const [countdown, setCountdown] = useState(dayjs(`${Year}-${Month}-${Day} ${current.time}`).diff(dayjs(), 'second'));
@@ -165,7 +45,7 @@ export function TimeClock() {
         // カウントダウンが0になったら、次の time をカウントダウン対象にする
         if (countdown <= 0) {
             const nextIndex = current.index + 1;
-            const nextTime = data.routes[0].homes[0].some[nextIndex].time;
+            const nextTime = TrainData.routes[0].homes[0].some[nextIndex].time;
             setCurrent({ index: nextIndex, time: nextTime });
             setCountdown(dayjs(`${Year}-${Month}-${Day} ${nextTime}`).diff(dayjs(), 'second'));
         }

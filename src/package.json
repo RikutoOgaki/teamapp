@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^13.1.6",
+    "@sentry/nextjs": "^7.93.0",
     "big.js": "^6.2.1",
     "dayjs": "^1.11.7",
     "eslint": "8.33.0",

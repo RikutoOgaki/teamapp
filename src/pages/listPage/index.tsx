@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import style from '@/styles/listPage/routelist.module.scss'
+import style from '@/styles/listPage/index.module.scss'
 // import switch_arrow from '@/public/img/switchArrow.png'
 import Image from 'next/image'
 
@@ -7,7 +7,7 @@ import Image from 'next/image'
 //     onCloseSample: () => void;
 // };
 
-export default function RouteList() {
+export default function listPage() {
 
     const [route, setRoute] = useState({
         route: [

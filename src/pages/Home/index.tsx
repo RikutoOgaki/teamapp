@@ -8,6 +8,8 @@ import { Modal } from '@/components/common/Modal'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 
+import { WeekData } from '@/types/WeekData'
+
 // 一番見るページになる
 
 export default function Home() {
@@ -122,17 +124,17 @@ export default function Home() {
             }
             <div className={style.homeWrap}>
                 <div className={style.myRoute}>
-                    {week.route.map((v, idx) =>
-                        v.weeknum === weekDay ?
+                    {WeekData.map((v, idx) =>
+                        v.weekNum === weekDay ?
                             <div key={idx} className={style.subMyRoute}>
                                 <div className={style.start}>
                                     <p className={style.label}>出発駅</p>
-                                    <p className={style.homeName}>{v.starthome}</p>
+                                    <p className={style.homeName}>{v.startHome}</p>
                                 </div>
                                 <span className={style.span}>経由駅</span>
                                 <div className={style.end}>
                                     <p className={style.label}>到着駅</p>
-                                    <p className={style.homeName}>{v.endhome}</p>
+                                    <p className={style.homeName}>{v.endHome}</p>
                                 </div>
                             </div> : null
                     )}

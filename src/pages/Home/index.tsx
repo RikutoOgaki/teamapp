@@ -87,14 +87,6 @@ export default function Home() {
         setModal(false)
     }
 
-
-    const [showRouteList, setShowRouteList] = useState(false);
-
-    const handleCloseSample = () => {
-        setShowRouteList(false);
-    };
-
-
     return (
         <>
             {/* 遅延通知用のModalComponent */}
@@ -150,7 +142,6 @@ export default function Home() {
                         <Link href={'../listPage'} className={style.linkBox}>
                             <div
                                 className={style.listIconBox}
-                                onClick={() => setShowRouteList(true)}
                             // 自分が登録したリスト表示の下から画面が出てくる
                             // onClick={}
                             >

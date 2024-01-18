@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { OneDay } from '@/components/common/OneDay'
-import style from '@/styles/saech/oneday.module.scss'
+import style from '@/styles/saech/index.module.scss'
 import switchArrow from '@/public/img/switchArrow.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from '@/components//template/Button'
 
 export default function Search() {
 
@@ -29,6 +29,23 @@ export default function Search() {
                         <p>到着駅</p>
                         <input type="text" />
                     </div>
+                </div>
+
+                <div>
+                    <button>出発</button>
+                    <button>到着</button>
+                    <button>始発</button>
+                    <button>終電</button>
+                </div>
+
+                <div>
+                    <input type="date" />
+                    <input type="time" />
+                </div>
+
+                <div>
+                    <Button text='リセット' />
+                    <Button text='登録' />
                 </div>
             </div>
 

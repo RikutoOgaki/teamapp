@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import style from '@/styles/home.module.scss'
 
@@ -9,6 +9,17 @@ import style from '@/styles/home.module.scss'
 // フロント実装なら、数秒後に遷移するようにする
 
 export default function LoginForm() {
+
+  // 画面遷移用のデータ
+  const router = useRouter()
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('./tutorial')
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [router])
 
   return (
     <>

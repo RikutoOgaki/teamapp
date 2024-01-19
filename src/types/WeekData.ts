@@ -2,10 +2,10 @@
 
 export const WeekData = [
     {
-        id: 1,
-        weekNum: 0,
-        startHome: '',
-        endHome: ''
+        id: 1,// 配列番号
+        weekNum: 0,// 曜日識別番号
+        startHome: '',// 出発する駅名
+        endHome: ''// 到着する駅名
     },
     {
         id: 2,

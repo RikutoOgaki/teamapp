@@ -29,9 +29,12 @@ export default function WeekPage() {
                             </div>
                             <div className={style.home}>
                                 <p>{v.startHome}</p>
-                                <span>←</span>
+                                <span>→</span>
                                 <p>{v.endHome}</p>
-                                <span>＞</span>
+                                <span
+                                    className={style.next}
+                                    onClick={() => { console.log(v.weekNum); }}
+                                >＞</span>
                             </div>
                         </div>
                     )}

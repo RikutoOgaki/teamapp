@@ -22,11 +22,8 @@ export default function ListPage() {
                     <button className={style.closeBtn}
                         onClick={() => {
                             location.href = '../Home'
-
                             console.log('発火');
-
-                        }
-                        }
+                        }}
                     ></button>
                     <p>リスト</p>
                 </div>

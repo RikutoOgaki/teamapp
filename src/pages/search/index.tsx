@@ -35,6 +35,13 @@ export default function Search() {
                             type="text"
                             onChange={(e) => setStart(e.target.value)}
                         />
+                        {
+                            <div className={style.resultBox}>
+                                <ul className={style.result}>
+                                    <li className={style.resultItem}></li>
+                                </ul>
+                            </div>
+                        }
                     </div>
                     <figure>
                         <img src={'/img/switchArrow.png'} alt="切り替え" />

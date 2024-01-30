@@ -7,6 +7,8 @@ import { FaTrainSubway } from 'react-icons/fa6';
 import { Modal } from '@/components/common/Modal'
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import Image from 'next/image'
+import lateCaution from '@/public/img/late_caution.png'
 
 import { WeekData } from '@/types/WeekData'
 
@@ -95,22 +97,27 @@ export default function Home() {
                 <Modal boolean={modal}>
                     <div className={style.modalBox}>
                         <div className={style.top}>
-                            <FaPlus
+                            <span className={style.clsBtnFrame} onClick={() => closeModal()}></span>
+                            <span className={style.icon} onClick={() => closeModal()}></span>
+                            {/* <FaPlus
                                 className={style.icon}
                                 onClick={() => closeModal()}
-                            />
+                            /> */}
                             <p className={style.text}>通知</p>
                         </div>
                         <div className={style.contents}>
                             <div className={style.imgBox}>
                                 <div className={style.textBox}>
-                                    <p className={style.big}>遅れが発生しています</p>
+                                    <div className={style.big}>
+                                        <Image className={style.lateCaution} src={lateCaution} alt='警告マーク'/>
+                                        <p>遅れが発生しています。</p>
+                                    </div>
                                     <p className={style.small}>
                                         8:04頃 阪急京都本線<br />
                                         上新庄〜淡路駅間で<br />
                                         路線トラブルが発生
                                     </p>
-                                    <p className={style.big}>約20分</p>
+                                    <p className={style.minute}>約<span>20</span>分</p>
                                     <p className={style.small}>の遅れが出ています。</p>
                                 </div>
                             </div>

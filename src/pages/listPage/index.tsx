@@ -8,8 +8,8 @@ export default function ListPage() {
         route: [
             {
                 routenum: 0,
-                starthome: '大阪梅田',
-                endhome: '十三'
+                starthome: '',
+                endhome: ''
             },
         ]
     })

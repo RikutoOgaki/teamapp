@@ -6,12 +6,11 @@ import style from '@/styles/components/common/modal.module.scss'
 
 type Props = {
     children: React.ReactNode,
-    boolean: boolean,
+    boolean?: boolean,
+    onClose?: () => void
 }
 
 export function Modal(props: Props) {
-
-    const [modal, setModal] = useState(props.boolean)
 
     return (
         <>

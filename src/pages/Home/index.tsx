@@ -90,6 +90,28 @@ export default function Home() {
         setModal(false)
     }
 
+
+    // ランダムで１分から１時間で通知を実装している
+    // const ModalRandom = () => {
+    //     const [showModal, setShowModal] = useState(false);
+
+    //     useEffect(() => {
+    //         const showRandomNotification = () => {
+    //             const randomTime = Math.floor(Math.random() * (10 * 60 * 1000)) + 60 * 1000; // ランダムな時間（1ミリ秒から10分まで）
+
+    //             setTimeout(() => {
+    //                 setShowModal(true); // モーダルを表示
+    //                 showRandomNotification(); // 次の通知をスケジュール
+    //             }, randomTime);
+    //         };
+
+    //         showRandomNotification(); // 最初の通知をスケジュール
+    //     }, []);
+
+    //     const closeModal = () => {
+    //         setShowModal(false);
+    //     }
+
     return (
         <>
             {/* 遅延通知用のModalComponent */}
@@ -109,7 +131,7 @@ export default function Home() {
                             <div className={style.imgBox}>
                                 <div className={style.textBox}>
                                     <div className={style.big}>
-                                        <Image className={style.lateCaution} src={lateCaution} alt='警告マーク'/>
+                                        <Image className={style.lateCaution} src={lateCaution} alt='警告マーク' />
                                         <p>遅れが発生しています。</p>
                                     </div>
                                     <p className={style.small}>
@@ -207,6 +229,5 @@ export default function Home() {
         </>
     )
 }
-
 // リスト表示は下からのスライドで表示する
-// 登録の方も動きは統一したほうが良い気がる
+// 登録の方も動きは統一したほうが良い気がる.

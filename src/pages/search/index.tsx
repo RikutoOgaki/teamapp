@@ -6,13 +6,22 @@ import Link from 'next/link'
 import { Button } from '@/components//template/Button'
 import { TrainData } from '@/types/TrainData'
 
-export default function Search() {
+type Props = {
+    weeknum: number,
+    starthome: string,
+    endhome: string
+}
+
+export default function Search(props: Props) {
 
     // 検索機能のためのデータ
 
     // 検索したい駅名を保存するstate
     const [start, setStart] = useState('')
     const [end, setEnd] = useState('')
+
+    // 探す画面から入ると、リストページに帰ってくる
+    // １週間の画面から入ると１週間の画面に帰ってくる
 
 
     // ボタンのデータを分けるためのstate
@@ -98,7 +107,6 @@ export default function Search() {
                     />
                 </div>
             </div>
-
         </>
     )
 }

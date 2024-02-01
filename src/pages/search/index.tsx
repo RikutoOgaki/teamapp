@@ -31,7 +31,7 @@ export default function Search(props: Props) {
         <>
             <div className={style.container}>
                 <div className={style.return}>
-                    <Link href="../weekPage" className={style.link}>
+                    <Link href="../Home" className={style.link}>
                         <span className={style.chevronLeft}>＜</span>
                         <p>戻る</p>
                     </Link>

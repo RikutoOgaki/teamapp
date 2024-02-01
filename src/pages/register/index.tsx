@@ -8,19 +8,19 @@ export default function Register() {
     const [starthome, setStartHome] = useState(
         {
             id: 1,
-            starthome: '大阪梅田',
+            starthome: '大阪',
             time: '05:00',
             type: '普通',
-            train: '阪急京都本線'
+            train: 'OsakaMetoro長堀鶴見緑地線'
         }
     )
     const [endhome, setEndHome] = useState(
         {
             id: 2,
-            endhome: '十三',
+            endhome: '生駒',
             time: '05:05',
             type: '普通',
-            train: '阪急京都本線'
+            train: 'OsakaMetoro長堀鶴見緑地線'
         }
     )
 

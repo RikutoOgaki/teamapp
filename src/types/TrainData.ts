@@ -5,8 +5,188 @@ export const TrainData = {
             routeName: '阪急京都本線',
             homes: [
                 {
-                    homeName: '大阪梅田',
+                    homeName: '大阪',
                     some: [
+                        {
+                            time: '9:00',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:05',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:10',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:15',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:20',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:25',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:30',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:35',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:40',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:45',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:50',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '9:55',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:00',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:05',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:10',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:15',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:20',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:25',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:30',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:35',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:40',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:45',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:50',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '10:55',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:00',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:05',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:10',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:15',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:20',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:25',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:30',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:35',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:40',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:45',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:50',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
+                        {
+                            time: '11:55',
+                            train: '普通',
+                            direction: '京都河原町行き'
+                        },
                         {
                             time: '12:00',
                             train: '普通',

@@ -23,32 +23,32 @@ export default function WeekPage() {
             {
                 id: 2,
                 weekNum: 1,
-                startHome: '',
-                endHome: ''
+                startHome: '大阪',
+                endHome: '生駒'
             },
             {
                 id: 3,
                 weekNum: 2,
-                startHome: '',
-                endHome: ''
+                startHome: '大阪',
+                endHome: '生駒'
             },
             {
                 id: 4,
                 weekNum: 3,
-                startHome: '',
-                endHome: ''
+                startHome: '大阪',
+                endHome: '生駒'
             },
             {
                 id: 5,
                 weekNum: 4,
-                startHome: '',
-                endHome: ''
+                startHome: '大阪',
+                endHome: '生駒'
             },
             {
                 id: 6,
                 weekNum: 5,
-                startHome: '',
-                endHome: ''
+                startHome: '大阪',
+                endHome: '生駒'
             },
             {
                 id: 7,

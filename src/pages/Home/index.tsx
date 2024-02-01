@@ -9,6 +9,7 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 import Image from 'next/image'
 import lateCaution from '@/public/img/late_caution.png'
+import { TransferProposal } from '@/components/common/TransferProposal'
 
 import { WeekData } from '@/types/WeekData'
 
@@ -24,38 +25,38 @@ export default function Home() {
         route: [
             {
                 weeknum: 0,
-                starthome: '奈良',
-                endhome: '大阪'
+                starthome: '',
+                endhome: ''
             },
             {
                 weeknum: 1,
                 starthome: '大阪',
-                endhome: '大阪'
+                endhome: '生駒'
             },
             {
                 weeknum: 2,
-                starthome: '生駒',
-                endhome: '京都'
+                starthome: '大阪',
+                endhome: '生駒'
             },
             {
                 weeknum: 3,
-                starthome: '北海道',
-                endhome: '青森'
+                starthome: '大阪',
+                endhome: '生駒'
             },
             {
                 weeknum: 4,
-                starthome: '滋賀',
-                endhome: '大阪'
+                starthome: '大阪',
+                endhome: '生駒'
             },
             {
                 weeknum: 5,
-                starthome: '奈良',
-                endhome: '和歌山'
+                starthome: '大阪',
+                endhome: '生駒'
             },
             {
                 weeknum: 6,
-                starthome: '生駒',
-                endhome: '大阪'
+                starthome: '',
+                endhome: ''
             },
         ]
     })
@@ -112,6 +113,14 @@ export default function Home() {
     //         setShowModal(false);
     //     }
 
+    // 振替案の提示state
+    const [compo, setCompo] = useState(false)
+
+    function Closed() {
+        setCompo(false)
+        setFlg(false)
+    }
+
     return (
         <>
             {/* 遅延通知用のModalComponent */}
@@ -148,86 +157,91 @@ export default function Home() {
                     </div>
                 </Modal>
             }
-            <div className={style.homeWrap}>
-                <div className={style.myRoute}>
-                    {WeekData.map((v, idx) =>
-                        v.weekNum === weekDay ?
-                            <div key={idx} className={style.subMyRoute}>
-                                <div className={style.start}>
-                                    <p className={style.label}>出発駅</p>
-                                    <p className={style.homeName}>{v.startHome}</p>
+            {!compo &&
+                <div className={style.homeWrap}>
+                    <div className={style.myRoute}>
+                        {WeekData.map((v, idx) =>
+                            v.weekNum === weekDay ?
+                                <div key={idx} className={style.subMyRoute}>
+                                    <div className={style.start}>
+                                        <p className={style.label}>出発駅</p>
+                                        <p className={style.homeName}>{v.startHome}</p>
+                                    </div>
+                                    <span className={style.span}>経由駅</span>
+                                    <div className={style.end}>
+                                        <p className={style.label}>到着駅</p>
+                                        <p className={style.homeName}>{v.endHome}</p>
+                                    </div>
+                                </div> : null
+                        )}
+                        <div className={style.link}>
+
+                            <Link href={'../listPage'} className={style.linkBox}>
+                                <div
+                                    className={style.listIconBox}
+                                // 自分が登録したリスト表示の下から画面が出てくる
+                                // onClick={}
+                                >
+                                    <FaRegFileAlt className={style.fileIcon} />
                                 </div>
-                                <span className={style.span}>経由駅</span>
-                                <div className={style.end}>
-                                    <p className={style.label}>到着駅</p>
-                                    <p className={style.homeName}>{v.endHome}</p>
+
+                            </Link>
+
+                            <Link href={'../search'} className={style.linkBox}>
+                                <div
+                                    className={style.addTrainIconBox}
+                                // 決まった日の電車を登録する画面がでてくる
+                                // onCLick={}
+                                >
+                                    <FaRegFileAlt className={style.addTrainIcon} />
+                                    <FaPlus className={style.plus} />
+
                                 </div>
-                            </div> : null
-                    )}
-                    <div className={style.link}>
+                            </Link>
 
-                        <Link href={'../listPage'} className={style.linkBox}>
-                            <div
-                                className={style.listIconBox}
-                            // 自分が登録したリスト表示の下から画面が出てくる
-                            // onClick={}
-                            >
-                                <FaRegFileAlt className={style.fileIcon} />
-                            </div>
-
-                        </Link>
-
-                        <Link href={'../search'} className={style.linkBox}>
-                            <div
-                                className={style.addTrainIconBox}
-                            // 決まった日の電車を登録する画面がでてくる
-                            // onCLick={}
-                            >
-                                <FaRegFileAlt className={style.addTrainIcon} />
-                                <FaPlus className={style.plus} />
-
-                            </div>
-                        </Link>
-
-                        <Link href={'../weekPage'} className={style.linkBox}>
-                            <div className={style.weekIconBox}>
-                                <CiMemoPad className={style.weekMemo} />
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                <div className={style.transferPlan}>
-                    <div className={style.tabBox}>
-                        <div className={style.tabs}>
-                            <button
-                                className={flg === false ? style.tabsSuc : style.tabsBtn}
-                                onClick={() => setFlg(false)}
-                            >遅延・運休</button>
-                            <button
-                                className={flg === false ? style.tabsBtn : style.tabsSuc}
-                                onClick={() => setFlg(true)}
-                            >振替案</button>
+                            <Link href={'../weekPage'} className={style.linkBox}>
+                                <div className={style.weekIconBox}>
+                                    <CiMemoPad className={style.weekMemo} />
+                                </div>
+                            </Link>
                         </div>
-                        <div className={style.messageBox}>
-                            {flg === false ?
-                                <div className={style.message}>
-                                    <p className={style.maru}><span>◯</span>遅延はありません</p>
-                                    {/* <p className={style.san}><span>△</span>１５分の遅延があります</p>
+                    </div>
+                    <div className={style.transferPlan}>
+                        <div className={style.tabBox}>
+                            <div className={style.tabs}>
+                                <button
+                                    className={flg === false ? style.tabsSuc : style.tabsBtn}
+                                    onClick={() => setFlg(false)}
+                                >遅延・運休</button>
+                                <button
+                                    className={flg === false ? style.tabsBtn : style.tabsSuc}
+                                    onClick={() => {
+                                        setFlg(true)
+                                        setCompo(true)
+                                    }}
+                                >振替案</button>
+                            </div>
+                            <div className={style.messageBox}>
+                                {flg === false ?
+                                    <div className={style.message}>
+                                        <p className={style.maru}><span>◯</span>遅延はありません</p>
+                                        {/* <p className={style.san}><span>△</span>１５分の遅延があります</p>
                                     <p className={style.batu}><span>✗</span>運転見合わせ</p> */}
-                                </div>
-                                :
-                                <div className={style.message}>
-                                    <p>振替案はこちらです</p>
-                                </div>
-                            }
+                                    </div>
+                                    :
+                                    <div className={style.message}>
+                                        <p>振替案はこちらです</p>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
+                    <TimeClock />
                 </div>
-
-                <TimeClock />
-            </div>
+            }
+            {compo &&
+                <TransferProposal onClose={Closed} />
+            }
         </>
     )
 }
-// リスト表示は下からのスライドで表示する
-// 登録の方も動きは統一したほうが良い気がる.

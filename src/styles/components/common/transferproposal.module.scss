@@ -1,0 +1,106 @@
+.transferProposalWrap {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 1rem;
+
+    .homeNameBox {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6rem;
+        padding-right: 1.5rem;
+
+        .close {
+            .icon {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .delayBox {
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .delayIcon {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #D7A14C;
+        }
+
+        .delayText {
+            color: #3A515D;
+            font-size: 1.5rem;
+        }
+
+        .subText {
+            color: #8A969D;
+            font-size: 1rem;
+        }
+    }
+
+    .contentBox {
+        width: 100%;
+        height: 4rem;
+
+        .content {
+            display: flex;
+            gap: 1rem;
+
+            .delay {
+                color: #8A969D;
+            }
+
+            .timeText {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .hurikaeWrap {
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+
+        .hurikaeContent {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+
+            .hurikaeCon {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #262626;
+
+                .time {
+                    font-size: 1.2rem;
+                }
+
+                .yen {
+                    font-size: .8rem;
+                    color: #8A969D;
+                }
+
+                .route {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ export default function ListPage() {
             {
                 routenum: 0,
                 starthome: '大阪梅田',
-                endhome: '京都河原町'
+                endhome: '桂'
             },
         ]
     })
